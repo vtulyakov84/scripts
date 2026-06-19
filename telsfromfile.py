@@ -1,15 +1,19 @@
 #!/usr/bin/env python3
 
+"""
+Поиск мобильных номеров телефона в файле с текстовым мусором
+Кодировка входного файла: cp1251
+    Пример использования: `./ipfromfile.py file-name`
+"""
+
 import re
 import sys
 import os
 
 def find_tels(filename):
-    """
-    Поиск Номером телефонов с более точным регулярным выражением
-    """
-    # Выборка 10-цифр, начинающихся с "9"
+    # Выборка 10-цифр, начинающихся с "8"
     tel_pattern = r'\b8\d{10}\b'
+    #tel_pattern = r'\b[8,9]\d{10,9}\b'
     
     try:
         with open(filename, 'r', encoding='cp1251') as file:
